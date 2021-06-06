@@ -1,19 +1,18 @@
 package com.mchojniak.sfgdi.controllers;
 
-import com.mchojniak.sfgdi.services.GreetingServiceImpl;
+import com.mchojniak.sfgdi.services.PropertyInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectedControllerTest {
 
     PropertyInjectedController controller;
+
     @BeforeEach
-    void setUp(){
+    void setUp() {
         controller = new PropertyInjectedController();
 
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new PropertyInjectedGreetingService();
     }
 
     @Test
